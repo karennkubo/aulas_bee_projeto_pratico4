@@ -1,7 +1,8 @@
 package com.ambev.projetopratico4.service;
 
-import com.ambev.techempowers.model.Produto;
-import com.ambev.techempowers.repository.ProdutoRepository;
+
+import com.ambev.projetopratico4.model.Produto;
+import com.ambev.projetopratico4.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

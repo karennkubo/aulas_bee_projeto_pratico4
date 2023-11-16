@@ -1,6 +1,7 @@
 package com.ambev.projetopratico4.repository;
 
-import com.ambev.techempowers.model.Produto;
+
+import com.ambev.projetopratico4.model.Produto;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
