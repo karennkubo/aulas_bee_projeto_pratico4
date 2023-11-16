@@ -1,12 +1,10 @@
 package com.ambev.projetopratico4.model;
 
-import jakarta.persistence.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
 public class Produto {
 
-    @Id
     private String id;
     private String nome;
     private String descricao;

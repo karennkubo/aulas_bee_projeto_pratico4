@@ -22,8 +22,6 @@ public class ProdutoService {
         return produtoRepository.save(produto);
     }
 
-
-
     public Optional<Produto> findById(String id) {
         return produtoRepository.findById(id);
 
@@ -33,5 +31,7 @@ public class ProdutoService {
         return produtoRepository.findByNome(nome);
     }
 
-    // Outros métodos de serviço, como buscar, atualizar e excluir produtos
+    public List<Produto> consultarProdutos() {
+        return produtoRepository.findAll();
+    }
 }
