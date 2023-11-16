@@ -42,7 +42,10 @@ public class ProdutoController {
     }
 
     @PostMapping
-    public Produto cadastrarProduto(@RequestBody Produto produto) {
+    public Object cadastrarProduto(@RequestBody Produto produto) {
+        if (produtoRepository.findByNome(produto.getNome()) != null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Product already registered");
+        }
         return produtoService.salvarProduto(produto);
     }
 
@@ -57,8 +60,8 @@ public class ProdutoController {
     }
 
     @GetMapping("/consultar/nome/{nome}")
-    public ResponseEntity<List<Produto>> consultarProdutoPeloNome(@PathVariable String nome) {
-        List<Produto> produto = produtoService.consultarPorNome(nome);
+    public ResponseEntity<Produto> consultarProdutoPeloNome(@PathVariable String nome) {
+        Produto produto = produtoService.consultarPorNome(nome);
         if (produto != null) {
             return ResponseEntity.ok(produto);
         } else {
